@@ -1,0 +1,25 @@
+// Algoritmo Outerplanar + MIS Exacto
+digraph {
+	A [label=INICIO]
+	B [label="Crear grafo: G = nx.Graph()"]
+	C [label="Agregar aristas: G.add_edges_from([...])"]
+	D [label="Verificar outerplanaridad:
+check_planarity, treewidth, K4/K2,3"]
+	E1 [label="NO es outerplanar
+→ Terminar"]
+	E2 [label="SI es outerplanar"]
+	F [label="Aplicar algoritmo exact_mis_path(G)"]
+	G [label="Resultado: MIS (tamaño N): sorted(mis_nodes)"]
+	H [label="Visualizar grafo con nodos MIS en verde"]
+	Z [label=FIN]
+	A -> B
+	B -> C
+	C -> D
+	D -> E1 [label=No]
+	D -> E2 [label="Sí"]
+	E2 -> F
+	F -> G
+	G -> H
+	E1 -> Z
+	H -> Z
+}

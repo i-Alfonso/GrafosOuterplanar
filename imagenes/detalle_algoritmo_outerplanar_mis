@@ -1,0 +1,29 @@
+// Detalle del Algoritmo Outerplanar + MIS
+digraph {
+	A [label=INICIO]
+	B1 [label="Construir Grafo G"]
+	B2 [label="Agregar aristas a G"]
+	C1 [label="Verificar Planaridad"]
+	C2 [label="Calcular treewidth"]
+	C3 [label="Detectar K4 o K2,3"]
+	D1 [label="NO Outerplanar"]
+	D2 [label="ES Outerplanar"]
+	E1 [label="Construir Bolsas de 3 nodos máx."]
+	F1 [label="Generar subconjuntos independientes"]
+	G1 [label="DP para maximizar tamaño MIS"]
+	H1 [label="Mostrar tamaño y nodos MIS"]
+	H2 [label=FIN]
+	A -> B1
+	B1 -> B2
+	B2 -> C1
+	C1 -> C2
+	C2 -> C3
+	C3 -> D1 [label="Sí detecta K4/K2,3 o treewidth > 2"]
+	C3 -> D2 [label="No detecta K4/K2,3 y treewidth ≤ 2"]
+	D1 -> H2
+	D2 -> E1
+	E1 -> F1
+	F1 -> G1
+	G1 -> H1
+	H1 -> H2
+}

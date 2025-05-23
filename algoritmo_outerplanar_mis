@@ -1,0 +1,21 @@
+// Algoritmo Outerplanar + MIS
+digraph {
+	A [label=INICIO]
+	B [label="G = nx.Graph()"]
+	C [label="G.add_edges_from([...])"]
+	D [label="is_outerplanar(G)"]
+	E1 [label="El grafo NO es outerplanar"]
+	E2 [label="El grafo ES outerplanar"]
+	F [label="size, mis_nodes = maximum_independent_set(G)"]
+	G [label="MIS (tamaño size): sorted(mis_nodes)"]
+	H [label=FIN]
+	A -> B
+	B -> C
+	C -> D
+	D -> E1 [label=No]
+	D -> E2 [label="Sí"]
+	E2 -> F
+	F -> G
+	E1 -> H
+	G -> H
+}
